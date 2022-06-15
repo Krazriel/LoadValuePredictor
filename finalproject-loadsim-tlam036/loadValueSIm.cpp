@@ -10,6 +10,7 @@ void loadValueSim::clearPredictor(){
     predictor.clear();
 }
 
+//calculates confidence binary to table
 void loadValueSim::confidenceDecision(uint64_t index, uint64_t addr, float threshold){
     this->threshold = threshold;
     pair<uint64_t, uint64_t> key = make_pair(index, addr);
@@ -23,6 +24,7 @@ void loadValueSim::confidenceDecision(uint64_t index, uint64_t addr, float thres
     }
 }
 
+//calculate confidence ratio to table
 void loadValueSim::confidenceCalculator(uint64_t index, uint64_t addr, uint64_t value){
     pair<uint64_t, uint64_t> key = make_pair(index, addr);
     if(confidenceTable.find(key) == confidenceTable.end()){
